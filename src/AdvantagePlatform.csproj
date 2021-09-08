@@ -6,6 +6,10 @@
     <ApplicationInsightsResourceId>/subscriptions/8f07513f-af9b-45df-8f7e-a791be4685d3/resourcegroups/LTI/providers/microsoft.insights/components/AdvantagePlatform</ApplicationInsightsResourceId>
     <ApplicationInsightsAnnotationResourceId>/subscriptions/8f07513f-af9b-45df-8f7e-a791be4685d3/resourcegroups/LTI/providers/microsoft.insights/components/AdvantagePlatform</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Repos\github\LtiAdvantagePlatform-fork\src\AdvantagePlatform.xml</DocumentationFile>
+  </PropertyGroup>
   
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
@@ -53,6 +57,12 @@
 
   <ItemGroup>
     <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AdvantagePlatform.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

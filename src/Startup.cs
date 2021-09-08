@@ -76,7 +76,7 @@ namespace AdvantagePlatform
                 });
 
                 // This will include the xml-doc comments for each endpoint in the Swagger UI
-                options.IncludeXmlComments(Path.Combine(System.AppContext.BaseDirectory, "LtiAdvantage.xml"));
+                options.IncludeXmlComments(Path.Combine(System.AppContext.BaseDirectory, "AdvantagePlatform.xml"));
 
                 // Ruby controllers accept a format extension (i.e. ".json"). All the controllers
                 // in this sample platform have two routes for each endpoint, one with and one without

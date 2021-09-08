@@ -1,0 +1,725 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AdvantagePlatform</name>
+    </assembly>
+    <members>
+        <member name="M:AdvantagePlatform.Areas.Identity.Pages.Account.Manage.PeopleModel.ParsePersonRoles(System.String)">
+            <summary>
+            Return an array of <see cref="T:LtiAdvantage.Lti.Role"/> from a comma separated list.
+            </summary>
+            <param name="rolesString">Comma separate list of <see cref="T:LtiAdvantage.Lti.Role"/> names.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvantagePlatform.Areas.Identity.Pages.Account.RegisterModel.CreatePlatformAsync(AdvantagePlatform.Data.ApplicationDbContext,Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Create a default platform.
+            </summary>
+            <param name="context"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvantagePlatform.Areas.Identity.Pages.Account.RegisterModel.CreateCourseAsync(AdvantagePlatform.Data.ApplicationDbContext)">
+            <summary>
+            Create a default course.
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvantagePlatform.Areas.Identity.Pages.Account.RegisterModel.CreatePeopleAsync(AdvantagePlatform.Data.ApplicationDbContext)">
+            <summary>
+            Create a default set of people that will be members of a course.
+            </summary>
+            <param name="context">The db context for Person.</param>
+            <returns></returns>
+        </member>
+        <member name="T:AdvantagePlatform.Config">
+            <summary>
+            Configuration data required at first startup of Identity Server.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Config.LtiScopes">
+            <summary>
+            LTI scopes.
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Config.GetClients">
+            <summary>
+            Built-in clients.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AdvantagePlatform.Config.GetIdentityResources">
+            <summary>
+            Identity resources that can be requested.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AdvantagePlatform.Config.GetApiResources">
+            <summary>
+            List of API's that are protected.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AdvantagePlatform.Controllers.LineItemsController">
+            <inheritdoc />
+            <summary>
+            Sample implementation of a line items controller.
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Controllers.LineItemsController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILogger{AdvantagePlatform.Controllers.LineItemsController},AdvantagePlatform.Data.ApplicationDbContext,AdvantagePlatform.Utility.CourseAccessValidator)">
+            <inheritdoc />
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Controllers.LineItemsController.OnAddLineItemAsync(LtiAdvantage.AssignmentGradeServices.AddLineItemRequest)">
+            <inheritdoc />
+            <summary>
+            Adds a gradebook column to a course.
+            </summary>
+            <returns>The line item corresponding to the new gradebook column.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Controllers.LineItemsController.OnDeleteLineItemAsync(LtiAdvantage.AssignmentGradeServices.DeleteLineItemRequest)">
+            <inheritdoc />
+            <summary>
+            Delete a gradebook column and the associated scores.
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Controllers.LineItemsController.OnGetLineItemAsync(LtiAdvantage.AssignmentGradeServices.GetLineItemRequest)">
+            <inheritdoc />
+            <summary>
+            Returns a gradebook column from a course.
+            </summary>
+            <returns>The line item corresponding to the gradebook column.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Controllers.LineItemsController.OnGetLineItemsAsync(LtiAdvantage.AssignmentGradeServices.GetLineItemsRequest)">
+            <inheritdoc />
+            <summary>
+            Returns the gradebook columns in a course.
+            </summary>
+            <returns>Line items corresponding to the gradebook columns.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Controllers.LineItemsController.OnUpdateLineItemAsync(LtiAdvantage.AssignmentGradeServices.UpdateLineItemRequest)">
+            <inheritdoc />
+            <summary>
+            Updates a line item.
+            </summary>
+        </member>
+        <member name="T:AdvantagePlatform.Controllers.MembershipController">
+            <inheritdoc />
+            <summary>
+            Sample membership controller that implements the Membership service.
+            See https://www.imsglobal.org/spec/lti-nrps/v2p0.
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Controllers.MembershipController.OnGetMembershipAsync(LtiAdvantage.NamesRoleProvisioningService.GetMembershipRequest)">
+            <inheritdoc />
+            <summary>
+            Returns members of the course.
+            </summary>
+            <param name="request">The request.</param>
+            <returns>The members of the sample course.</returns>
+        </member>
+        <member name="T:AdvantagePlatform.Controllers.ResultsController">
+            <inheritdoc />
+            <summary>
+            Sample results controller that returns highest score for each lineitem.
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Controllers.ResultsController.OnGetResultsAsync(LtiAdvantage.AssignmentGradeServices.GetResultsRequest)">
+            <inheritdoc />
+            <summary>
+            Returns the most recent score for each person with scores.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AdvantagePlatform.Controllers.ScoresController">
+            <inheritdoc />
+            <summary>
+            Sample scores controller.
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Controllers.ScoresController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILogger{AdvantagePlatform.Controllers.ScoresController},AdvantagePlatform.Data.ApplicationDbContext,AdvantagePlatform.Utility.CourseAccessValidator)">
+            <inheritdoc />
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Controllers.ScoresController.OnAddScoreAsync(LtiAdvantage.AssignmentGradeServices.AddScoreRequest)">
+            <inheritdoc />
+            <summary>
+            Add a score to a line item.
+            </summary>
+            <param name="request">The request parameters.</param>
+            <returns>The score that was added.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Controllers.ScoresController.OnGetScoreAsync(LtiAdvantage.AssignmentGradeServices.GetScoreRequest)">
+            <inheritdoc />
+            <summary>
+            Returns a score.
+            </summary>
+            <remarks>
+            This is not part of the Assignment and Grade Services spec.
+            </remarks>
+            <param name="request">The request parameters.</param>
+            <returns>The score.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetCourseAsync(System.Int32)">
+            <summary>
+            Return a fully populated <see cref="T:AdvantagePlatform.Data.Course"/>.
+            </summary>
+            <param name="id">The course id.</param>
+            <returns>The course.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetCourseByResourceLinkIdAsync(System.Int32)">
+            <summary>
+            Return a course given the id of a resource link within the course.
+            </summary>
+            <param name="resourceLinkId">The resource link id.</param>
+            <returns>The course.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetGradebookColumnAsync(System.Int32)">
+            <summary>
+            Returns a gradebook column with scores.
+            </summary>
+            <param name="id">The gradebook column id.</param>
+            <returns>The gradebook column.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetGradebookColumnByResourceLinkIdAsync(System.Int32)">
+            <summary>
+            Returns the gradebook column for a resource link if there is exactly one. Otherwise
+            returns null.
+            </summary>
+            <param name="id">The resource link id.</param>
+            <returns>The gradebook column.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetGradebookRowAsync(System.Int32)">
+            <summary>
+            Returns a gradebook row.
+            </summary>
+            <param name="id">The gradebook row id.</param>
+            <returns>The gradebook row.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetPersonAsync(System.Int32)">
+            <summary>
+            Returns a person.
+            </summary>
+            <param name="id">The person id.</param>
+            <returns>The person.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetPlatformAsync(System.Int32)">
+            <summary>
+            Returns a full platform.
+            </summary>
+            <param name="id">The platform id.</param>
+            <returns>The platform.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetPlatformByResourceLinkIdAsync(System.Int32)">
+            <summary>
+            Returns a platform given the id of a resource link within the platform.
+            </summary>
+            <param name="id">The resource link id.</param>
+            <returns>The platform.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetResourceLinkAsync(System.Int32)">
+            <summary>
+            Returns a fully populated <see cref="T:AdvantagePlatform.Data.ResourceLink"/>.
+            </summary>
+            <param name="id">The resource link id.</param>
+            <returns>The resource link.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetToolAsync(System.Int32)">
+            <summary>
+            Returns a fully populated <see cref="T:AdvantagePlatform.Data.Tool"/>.
+            </summary>
+            <param name="id">The tool id.</param>
+            <returns>The tool.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetUserFullAsync(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Returns the fully populated <see cref="T:AdvantagePlatform.Data.AdvantagePlatformUser"/>.
+            </summary>
+            <param name="principal">The ClaimsPrincipal which contains the user id claim.</param>
+            <returns>The user.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetUserFullAsync(System.String)">
+            <summary>
+            Returns the fully populated <see cref="T:AdvantagePlatform.Data.AdvantagePlatformUser"/>.
+            </summary>
+            <param name="id">The user id.</param>
+            <returns>The user.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetUserId(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Return the user id from the <see cref="T:System.Security.Claims.ClaimsPrincipal"/>.
+            </summary>
+            <param name="principal">The principal.</param>
+            <returns>The user id.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetUserLightAsync(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Returns the <see cref="T:AdvantagePlatform.Data.AdvantagePlatformUser"/> and first level dependents
+            (Course, People, Platform, and Tools).
+            </summary>
+            <param name="principal">The ClaimsPrincial which contains the user id claim.</param>
+            <returns>The user.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetUserLightAsync(System.String)">
+            <summary>
+            Returns the <see cref="T:AdvantagePlatform.Data.AdvantagePlatformUser"/> and first dependents
+            (Course, People, Platform, and Tools).</summary>)
+            <param name="id">The user id.</param>
+            <returns>The user.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetUserByCourseIdAsync(System.Int32)">
+            <summary>
+            Returns a user given the user's course id.
+            </summary>
+            <param name="id">The course id.</param>
+            <returns>The user.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetUserByPlatformIdAsync(System.Int32)">
+            <summary>
+            Returns a user given the user's platform id.
+            </summary>
+            <param name="id">The platform id.</param>
+            <returns>The user.</returns>
+        </member>
+        <member name="M:AdvantagePlatform.Data.ApplicationDbContext.GetUserByResourceLinkIdAsync(System.Int32)">
+            <summary>
+            Returns a user given the id of a resource link within the user's platform or course.
+            </summary>
+            <param name="id">The resource link id.</param>
+            <returns>The user.</returns>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Course.Id">
+            <summary>
+            Primary key.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Course.SisId">
+            <summary>
+            SIS ID for the course.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Course.Name">
+            <summary>
+            Name of the course.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Course.GradebookColumns">
+            <summary>
+            Represents the columns of the course gradebook. Each row will have
+            scores and results for each person in the course.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Course.ResourceLinks">
+            <summary>
+            Represents the LTI resources in the course.
+            </summary>
+        </member>
+        <member name="T:AdvantagePlatform.Data.GradebookColumn">
+            <summary>
+            Represents a column of the course gradebook. Each row will have
+            scores and results for each person in the course.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookColumn.Id">
+            <summary>
+            Primary key.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookColumn.EndDateTime">
+            <summary>
+            The end date and time.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookColumn.Label">
+            <summary>
+            Optional, human-friendly label for this LineItem suitable for display. 
+            For example, this label might be used as the heading of a column in a gradebook.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookColumn.ResourceLink">
+            <summary>
+            The resource link.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookColumn.ResourceId">
+            <summary>
+            The non-link resource id.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookColumn.ScoreMaximum">
+            <summary>
+            The maximum score allowed.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookColumn.Scores">
+            <summary>
+            The scores recorded in this gradebook column.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookColumn.StartDateTime">
+            <summary>
+            The start date and time.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookColumn.Tag">
+            <summary>
+            Optional tag.
+            </summary>
+        </member>
+        <member name="T:AdvantagePlatform.Data.GradebookRow">
+            <summary>
+            Represents a row of the course gradebook. Each row will have
+            0 or more scores for a person in the course.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookRow.Id">
+            <summary>
+            Primary key.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookRow.ActivityProgress">
+            <summary>
+            Status of the user toward activity's completion.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookRow.Comment">
+            <summary>
+            A comment with the score.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookRow.GradingProgress">
+            <summary>
+            The status of the grading process.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookRow.PersonId">
+            <summary>
+            The person id.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookRow.ScoreGiven">
+            <summary>
+            The score.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookRow.ScoreMaximum">
+            <summary>
+            The maximum possible score.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.GradebookRow.TimeStamp">
+            <summary>
+            The UTC time the score was set. ISO 8601 format.
+            </summary>
+        </member>
+        <member name="T:AdvantagePlatform.Data.ResourceLink">
+            <summary>
+            An LTI resource link. This can belong to the platform (e.g. a district
+            reporting tool) or to a course (e.g. an assignment).
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.ResourceLink.Id">
+            <summary>
+            Primary key.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.ResourceLink.CustomProperties">
+            <summary>
+            Custom properties included with this resource link.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.ResourceLink.Description">
+            <summary>
+            The link description.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.ResourceLink.Title">
+            <summary>
+            The link title.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.ResourceLink.Tool">
+            <summary>
+            The tool to launch.
+            </summary>
+        </member>
+        <member name="T:AdvantagePlatform.Data.Tool">
+            <summary>
+            This Tool implements the "2.1.2.2 Tool registered and deployed" model shown in
+            Figure 2 within https://www.imsglobal.org/spec/lti/v1p3#tool-registered-and-deployed
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Tool.Id">
+            <summary>
+            Primary key.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Tool.CustomProperties">
+            <summary>
+            Custom properties included with every resource link that uses this tool.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Tool.DeepLinkingLaunchUrl">
+            <summary>
+            The URL used to launch the deep linking flow.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Tool.DeploymentId">
+            <summary>
+            The Deployment ID for this Tool/Client combination.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Tool.IdentityServerClientId">
+            <summary>
+            The primary key of the Identity Server client associated with this tool.
+            Not the OIDC client id.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Tool.LaunchUrl">
+            <summary>
+            The URL used to launch the tool.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Tool.LoginUrl">
+            <summary>
+            The URL used to initiate OIDC authorization..
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Data.Tool.Name">
+            <summary>
+            The tool name.
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Pages.DeepLinksModel.GetPemKeys(System.Collections.Generic.IEnumerable{IdentityServer4.EntityFramework.Entities.ClientSecret})">
+            <summary>
+            Get the PEM format secrets.
+            </summary>
+            <param name="secrets">The secrets to examine.</param>
+            <returns>The PEM secrets converted into <see cref="T:Microsoft.IdentityModel.Tokens.RsaSecurityKey"/>'s.</returns>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ResourceLinkModel.Id">
+            <summary>
+            Primary key
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Pages.Models.ResourceLinkModel.GetResourceLinks(System.Collections.Generic.ICollection{AdvantagePlatform.Data.ResourceLink})">
+            <summary>
+            Convert the resource links into ResourceLinkModels.
+            </summary>
+            <param name="resourceLinks">The resource links to convert.</param>
+            <returns></returns>
+        </member>
+        <member name="T:AdvantagePlatform.Pages.Models.ToolModel">
+            <summary>
+            This Tool implements the "2.1.2.2 Tool registered and deployed" model shown in
+            Figure 2 within https://www.imsglobal.org/spec/lti/v1p3#tool-registered-and-deployed
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Pages.Models.ToolModel.#ctor">
+            <summary>
+            Parameterless constructor for model binding.
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Pages.Models.ToolModel.#ctor(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Create an instance of <see cref="T:AdvantagePlatform.Pages.Models.ToolModel"/>.
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Pages.Models.ToolModel.#ctor(Microsoft.AspNetCore.Http.HttpContext,AdvantagePlatform.Data.Tool,IdentityServer4.EntityFramework.Entities.Client)">
+            <inheritdoc />
+            <summary>
+            Create an instance of <see cref="T:AdvantagePlatform.Pages.Models.ToolModel" /> using tool and client entities.
+            </summary>
+            <param name="httpContext">The HttpContext.</param>
+            <param name="tool">The tool entity.</param>
+            <param name="client">The client entity.</param>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.Id">
+            <summary>
+            The primary key.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.IdentityServerClientId">
+            <summary>
+            The primary key of the IdentityServer Client associated with the tool.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.ClientId">
+            <summary>
+            The required Client ID. Must be unique in IdentityServer.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.PublicKey">
+            <summary>
+            The client public signing key.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.CustomProperties">
+            <summary>
+            Custom properties to include with all tool launches.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.DeepLinkingLaunchUrl">
+            <summary>
+            Deep linking launch url.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.DeploymentId">
+            <summary>
+            Generated and immutable deployment id.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.LaunchUrl">
+            <summary>
+            Tool launch url.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.LoginUrl">
+            <summary>
+            OIDC login initiation url.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.Name">
+            <summary>
+            Tool display name.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.Issuer">
+            <summary>
+            Identity Server issuer uri
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.AuthorizeUrl">
+            <summary>
+            Identity Server authorize endpoint url
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.JwkSetUrl">
+            <summary>
+            Identity Server JWK Set endpoint url
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Pages.Models.ToolModel.TokenUrl">
+            <summary>
+            Identity Server access token endpoint uri
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Pages.OidcLaunchModel.OnGetAsync(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Initiate login to tool from platform.
+            </summary>
+            <param name="id">The resource link or tool id.</param>
+            <param name="messageType">The lti message type.</param>
+            <param name="courseId">The course id (or null if not launched from a course).</param>
+            <param name="personId">The person id to impersonate.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvantagePlatform.Pages.OidcLaunchModel.Post(System.String,System.Object)">
+            <summary>
+            Return a <see cref="T:Microsoft.AspNetCore.Mvc.ContentResult"/> that automatically POSTs the values.
+            </summary>
+            <param name="url">Where to post the values.</param>
+            <param name="values">The values to post.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvantagePlatform.Startup.InitializeDatabase(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Configure Identity Server.
+            </summary>
+        </member>
+        <member name="T:AdvantagePlatform.Utility.HideRubyRoutesInSwaggerFilter">
+            <summary>
+            Removes routes from ApiDocument that include ".{format}" which is used
+            to match endpoints for Ruby clients that specify formatting (e.g. ".json").
+            </summary>
+        </member>
+        <member name="T:AdvantagePlatform.Utility.LocalhostUrlAttribute">
+            <inheritdoc />
+            <summary>
+            Validates a URL. Returns True if value is null.
+            </summary>
+        </member>
+        <member name="T:AdvantagePlatform.Utility.LtiAdvantageProfileService">
+            <inheritdoc />
+            <summary>
+            Custom ProfileService to add LTI Advantage claims to id_token.
+            </summary>
+            <remarks>
+            See https://damienbod.com/2016/11/18/extending-identity-in-identityserver4-to-manage-users-in-asp-net-core/.
+            </remarks>
+        </member>
+        <member name="M:AdvantagePlatform.Utility.LtiAdvantageProfileService.GetProfileDataAsync(IdentityServer4.Models.ProfileDataRequestContext)">
+            <inheritdoc />
+            <summary>
+            Add LTI Advantage claims to id_token.
+            </summary>
+            <param name="context">The context.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvantagePlatform.Utility.LtiAdvantageProfileService.IsActiveAsync(IdentityServer4.Models.IsActiveContext)">
+            <inheritdoc />
+            <summary>
+            Do nothing.
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvantagePlatform.Utility.LtiAdvantageProfileService.GetDeepLinkingRequestClaims(AdvantagePlatform.Data.Tool,AdvantagePlatform.Data.Person,AdvantagePlatform.Data.Course,AdvantagePlatform.Data.Platform)">
+            <summary>
+            Returns the LTI claims for an LtiDeepLinkingRequest.
+            </summary>
+            <param name="tool">The deep linking tool.</param>
+            <param name="person">The person being authorized.</param>
+            <param name="course">The course (can be null).</param>
+            <param name="platform">The platform.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvantagePlatform.Utility.LtiAdvantageProfileService.GetResourceLinkRequestClaims(AdvantagePlatform.Data.ResourceLink,AdvantagePlatform.Data.GradebookColumn,AdvantagePlatform.Data.Person,AdvantagePlatform.Data.Course,AdvantagePlatform.Data.Platform)">
+            <summary>
+            Returns the LTI claims for an LtiResourceLinkRequest.
+            </summary>
+            <param name="resourceLink">The resource link.</param>
+            <param name="gradebookColumn">The gradebool column for this resource link.</param>
+            <param name="person">The person being authorized.</param>
+            <param name="course">The course (can be null).</param>
+            <param name="platform">The platform.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvantagePlatform.Utility.StringExtensions.IfMissingThen(System.String,System.String)">
+            <summary>
+            Returns "[Not Set]" or replacement if string is missing.
+            </summary>
+            <param name="value">The string.</param>
+            <param name="replacement">The replacement (defaults to "[Not Set]").</param>
+            <returns>A string.</returns>
+        </member>
+        <member name="T:AdvantagePlatform.Utility.TooltipTagHelper">
+            <inheritdoc />
+            <summary>
+            Displays the Description from the <see cref="T:System.ComponentModel.DataAnnotations.DisplayAttribute" />
+            for the model as a tooltip.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Utility.TooltipTagHelper.Order">
+            <inheritdoc />
+        </member>
+        <member name="P:AdvantagePlatform.Utility.TooltipTagHelper.For">
+            <summary>
+            An expression to be evaluated against the current model.
+            </summary>
+        </member>
+        <member name="P:AdvantagePlatform.Utility.TooltipTagHelper.Html">
+            <summary>
+            True if the tooltip has custom HTML.
+            </summary>
+        </member>
+        <member name="M:AdvantagePlatform.Utility.TooltipTagHelper.Process(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)">
+            <inheritdoc />
+            <remarks>Does nothing if <see cref="P:AdvantagePlatform.Utility.TooltipTagHelper.For"/> is <c>null</c>.</remarks>
+        </member>
+    </members>
+</doc>
